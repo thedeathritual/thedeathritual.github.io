@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 	<meta name="description" content="We collect tears and turn it to stories." />  
-	<meta name="keywords" content="Death, ritual, electronic, music, industrial-metal, metalheads, occult" />
+	<meta name="keywords" content="Death, ritual, electronic, music, industrial-metal, metalheads, occult"/>
 	<meta property="og:title" content="The Death Ritual">
 	<meta property="og:url" content="http://thedeathritual.github.io">
 	<meta property="og:description" content="We collect tears and turn it to stories.">
@@ -17,138 +17,153 @@
 	<title>The Death Ritual</title>
 	<!-- Icon -->
 	<link rel="shortcut icon" href="img/favicon.png">
-	 <!-- Slider Style -->
-    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
-    <!-- Slider Custom Theme -->
-	<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
 	<!-- Our Styles -->
-    <link rel="stylesheet" href="css/main.css">
-	
-	<!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter50777296 = new Ya.Metrika2({
-                    id:50777296,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/tag.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks2");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/50777296" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-127658717-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-127658717-1');
-</script>
-
-
+    <link rel="stylesheet" href="css/main.min.css">
 </head>
 <body>
-	<main class="main">
-		<nav class="nav">
+	<main id="main" class="main">
+		<div id="popup-download" class="popup-download">
+            <span>
+            	Download EP<br/>
+            	"The Death Ritual"?
+        	</span>
+            <a class="popup-download__yes" href="TheDeathRitual.rar" download="The Death Ritual">
+            	Yes
+            </a>
+            <button id="popup-download__close" class="close popup-download__close">
+            	x
+        	</button>
+        </div>
+        <div id="popup-about" class="popup-about">
+        	<div class="popup-about__wrapper"></div>
+			<div class="popup-about__text">
+				<h1 class="popup-about__title">
+					The Death Ritual
+				</h1>
+				<p>
+					We came from basements of ruined citys, from bleeding streets, to present you our vision of life and our creation.
+				</p>	
+				<p>
+					We try to experiment in different styles of music. Our lyrics are the tears that we collect from cemeteries of broken hopes and turn it to stories, that we present to you. We try to make our music diverse and unique, but on this hard way we need your help.
+				</p>	
+				<p>
+					So, if you like our music we appreciate you to support us.
+					As you know Band without Fans means nothing.
+				</p>
+			</div>
+        	<button id="popup-about__close" class="close popup-about__close">
+            	x
+        	</button>
+        </div>
+        <div id="hamburger" class="hamburger">
+        	<div class="hamburger__block">
+        		<span class="hamburger__line"></span>
+        		<span class="hamburger__line"></span>
+        		<span class="hamburger__line"></span>
+        	</div>
+        </div>
+		<nav id="nav" class="nav">
 			<ul class="menu">
 				<li class="menu__item">
-					<a  href="#">
-						<img class="mini-logo" alt="mini-logo" src="img/mini-logo.png">
+					<a href="#">
+						<img id="mini-logo" class="mini-logo" alt="mini-logo" src="img/mini-logo.png">
 					</a>
 				</li>	
 				<li class="menu__item">
-					<a href="https://thedeathritual.bandcamp.com/" target="_blank">
-						<img src="img/bandcamp.png" alt="bandcamp">
+					<a class="menu__link" href="#" class="about" id="about">
+						About
 					</a>
 				</li>
 				<li class="menu__item">
-					<a href="https://www.instagram.com/death_ritual/" target="_blank">
-						<img src="img/instagram.png" alt="instagram">
+					<a id="music" class="menu__link" href="#">Music</a>
+					<ul id="music__menu" class="music__menu">
+						<li class="music__list">
+							<button id="download" class="download menu__link">
+								Download
+							</button>
+						</li>
+						<li class="music__list">
+							<a class="menu__link" href="https://thedeathritual.bandcamp.com/" target="_blank">
+								Bandcamp
+							</a>
+						</li>
+						<li>
+							<a class="menu__link" href="https://soundcloud.com/death_ritual" target="_blank">
+								Soundcloud
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu__item">
+					<a class="menu__link" href="https://www.instagram.com/death_ritual/" target="_blank">
+						Instagram
 					</a>
 				</li>
 				<li class="menu__item">
-					<a href="https://www.facebook.com/thedeathritual" target="_blank">
-						<img src="img/facebook.png" alt="facebook">
+					<a class="menu__link" href="https://www.facebook.com/thedeathritual" target="_blank">
+						Facebook
 					</a>
 				</li>
 				<li class="menu__item">
-					<a href="https://www.youtube.com/channel/UCrvpG3h4f6ScHzenfhhSt9Q" target="_blank">
-						<img src="img/youtube.png" alt="youtube">
+					<a class="menu__link" href="https://www.youtube.com/channel/UCrvpG3h4f6ScHzenfhhSt9Q" target="_blank">
+						YouTube
 					</a>
 				</li>
 				<li class="menu__item">
-					<a href="https://www.patreon.com/thedeathritual" target="_blank">
-						<img src="img/patreon.png" alt="patreon">
-					</a>
-				</li>
-				<li class="menu__item">
-					<a href="https://www.facebook.com/pg/thedeathritual/shop/" target="_blank">
-						<img src="img/merchendise.png" alt="merch">
+					<a class="menu__link" href="https://www.facebook.com/pg/thedeathritual/shop/" target="_blank">
+						Merchendise
 					</a>
 				</li>
 			</ul>
+			<button id="menu__close" class="close menu__close">
+            	x
+        	</button>
 		</nav>
-		<div id="content" class="content">
+		<section id="content" class="content">
 			<div class="content__left">
-				<div id="slider" class="slider">
-					<div class="zodiac">
-						<div class="video">
-							<iframe width="540" height="305" src="https://www.youtube.com/embed/E3Q3rXwObGI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div class="ritual">
-						<div class="video">
-							<iframe width="540" height="305" src="https://www.youtube.com/embed/lgF_ETCrj5U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div class="warzone">
-						<div class="video">
-							<iframe width="540" height="305" src="https://www.youtube.com/embed/Q_Ej8kybw_E" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-						</div>
-					</div>
-				</div>
-				<div class="email">
-					<a href="mailto:thedeathritual@gmail.com">
-						<img src="img/email.png" alt="email">
-					</a>
-				</div>
+				<div class="video">
+					<div class="video__ratio video__ratio-16x9"></div>
+					<iframe class="video__content" src="https://www.youtube.com/embed/E3Q3rXwObGI"  allow="autoplay; encrypted-media" allowfullscreen>
+					</iframe>		
+				</div>	
 			</div>	
-			<div class="content__right">
-				<div class="logo">
-					<img src="img/logo.png" alt="logo">
-				</div>
-				<div id="deep" class="deep">
-					<img id="img1" src="img/deep.png" alt="six feet deep">
-				</div>
+			<div id="content__right" class="content__right">
+				<article class="content__right-main">
+						<img id="logo" class="logo" src="img/logo.png" alt="logo">
+					<p id="deep" class="deep">
+						Welcome to the six feet deep
+					</p>
+				</article>
+				<article id="news" class="news">
+					<h1>
+						News
+					</h1>
+					<section class="news__main">
+						<h2>
+							New single coming soon
+						</h2>
+						<h3>
+							Zombie
+						</h3>
+						<img class="news__image" src="img/zombie-single.jpg" alt="art for new song 'Zombie'">
+						<p>
+							If you would like to donate
+						</p>
+						<span>
+							5168 7554 3056 0124
+						</span>
+					</section>
+				</article>
+			</div>	
+		</section>	
+		<footer class="footer">
+			<div class="footer__link">
+				<a class="email" href="mailto:thedeathritual@gmail.com">
+					thedeathritual@gmail.com
+				</a>
 			</div>
-		</div>		
+		</footer>	
 	</main>
-	<!-- JQuery JS -->
-	<script
-  		src="https://code.jquery.com/jquery-3.3.1.min.js"
-  		integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  		crossorigin="anonymous"></script>
-	<!-- Slider JS -->
-	<script type="text/javascript" src="slick/slick.min.js"></script>
 	<!-- Our JS -->
 	<script type="text/javascript" src="js/main.js"></script>	
 </body>
