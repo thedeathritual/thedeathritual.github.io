@@ -1,5 +1,91 @@
 "use strict";
 
+//preloader
+var preloader = document.querySelector('.preloader');
+
+var bodyFixed = function bodyFixed() {
+  document.body.classList.add('body-fixed');
+};
+
+var isPreloaderLoaded = function isPreloaderLoaded() {
+  document.body.classList.remove('body-fixed');
+  preloader.classList.add('hidden');
+};
+
+var preloaderAnim = {
+  targets: preloader,
+  delay: 1500,
+  opacity: {
+    value: 0,
+    duration: 300,
+    easing: 'linear'
+  },
+  offset: '+=100',
+  begin: function begin() {
+    bodyFixed();
+  },
+  complete: function complete() {
+    isPreloaderLoaded();
+  }
+};
+var Logo = {
+  targets: '.preloader svg path',
+  opacity: '0',
+  easing: 'easeInOutSine',
+  duration: 1500,
+  delay: function delay(el, i) {
+    return i * 250;
+  },
+  direction: 'alternate'
+};
+var tlLogo = anime.timeline({
+  autoplay: false,
+  duration: 500
+});
+tlLogo.add(preloaderAnim).add(Logo);
+tlLogo.play();
+var preloaderCounter = document.querySelector('.preloader__counter');
+var counter = {
+  nums: '0%'
+};
+anime({
+  targets: counter,
+  nums: '100%',
+  round: 1,
+  easing: 'linear',
+  update: function update() {
+    preloaderCounter.innerHTML = counter.nums;
+  }
+});
+"use strict";
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+var audios = _toConsumableArray(document.querySelectorAll('.audio'));
+
+var activeClassToggle = function activeClassToggle(el) {
+  el.classList.toggle('active-color');
+};
+
+audios.forEach(function (audioBlock) {
+  console.log(audioBlock);
+  var audioTitle = audioBlock.querySelector('.audio__title');
+  var audio = audioBlock.querySelector('.audio__control');
+  audio.addEventListener('play', function () {
+    activeClassToggle(audioTitle);
+  });
+  audio.addEventListener('pause', function () {
+    activeClassToggle(audioTitle);
+  });
+});
+"use strict";
+
 var canvas = document.querySelector('.home__canvas');
 
 if (canvas) {
@@ -85,6 +171,39 @@ if (canvas) {
   update();
 }
 "use strict";
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+var images = _toConsumableArray(document.querySelectorAll('.lazy'));
+
+var interactSettings = {//root: document.querySelector('.gallery__content'),
+  // rootMargin: '0px 0px 200px 0px'
+};
+
+function onIntersection(imageEntites) {
+  imageEntites.forEach(function (image) {
+    if (image.isIntersecting) {
+      observer.unobserve(image.target);
+      image.target.src = image.target.dataset.src;
+
+      image.target.onload = function () {
+        return image.target.classList.add('no-blur');
+      };
+    }
+  });
+}
+
+var observer = new IntersectionObserver(onIntersection, interactSettings);
+images.forEach(function (image) {
+  return observer.observe(image);
+});
+"use strict";
 "use strict";
 
 var playerBtn = document.querySelector('.mini-player__button'),
@@ -137,6 +256,7 @@ wrapperMenu.addEventListener('click', function () {
     downloadPopup.style.display = 'none';
   });
 })();
+"use strict";
 "use strict";
 
 function findVideos() {
