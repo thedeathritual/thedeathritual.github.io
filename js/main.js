@@ -173,8 +173,9 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var images = _toConsumableArray(document.querySelectorAll('.lazy'));
 
-var interactSettings = {//root: document.querySelector('.gallery__content'),
-  // rootMargin: '0px 0px 200px 0px'
+var interactSettings = {
+  root: document.querySelector('.gallery__content'),
+  rootMargin: '0px 0px 200px 0px'
 };
 
 var onIntersection = function onIntersection(imageEntites) {
