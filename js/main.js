@@ -194,7 +194,12 @@ var onIntersection = function onIntersection(imageEntites) {
 
 var observer = new IntersectionObserver(onIntersection, interactSettings);
 images.forEach(function (image) {
-  return observer.observe(image);
+  if (observer) {
+    observer.observe(image);
+  } else {
+    image.target.classList.add('no-blur');
+    image.target.classList.remove('blur');
+  }
 });
 "use strict";
 "use strict";
