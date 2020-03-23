@@ -173,29 +173,36 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 
 var images = _toConsumableArray(document.querySelectorAll('.lazy'));
 
-var interactSettings = {
-  root: document.querySelector('.gallery__content'),
-  rootMargin: '0px 0px 200px 0px'
-};
+if ('IntersectionObserver' in window) {
+  var interactSettings = {
+    root: document.querySelector('.gallery__content'),
+    rootMargin: '0px 0px 200px 0px'
+  };
 
-var onIntersection = function onIntersection(imageEntites) {
-  imageEntites.forEach(function (image) {
-    if (image.isIntersecting) {
-      observer.unobserve(image.target);
-      image.target.src = image.target.dataset.src;
+  var onIntersection = function onIntersection(imageEntites) {
+    imageEntites.forEach(function (image) {
+      if (image.isIntersecting) {
+        observer.unobserve(image.target);
+        image.target.src = image.target.dataset.src;
 
-      image.target.onload = function () {
-        image.target.classList.add('no-blur');
-        image.target.classList.remove('blur');
-      };
-    }
+        image.target.onload = function () {
+          image.target.classList.add('no-blur');
+          image.target.classList.remove('blur');
+        };
+      }
+    });
+  };
+
+  var observer = new IntersectionObserver(onIntersection, interactSettings);
+  images.forEach(function (image) {
+    return observer.observe(image);
   });
-};
-
-var observer = new IntersectionObserver(onIntersection, interactSettings);
-images.forEach(function (image) {
-  return observer.observe(image);
-});
+} else {
+  images.forEach(function (image) {
+    image.target.classList.add('no-blur');
+    image.target.classList.remove('blur');
+  });
+}
 "use strict";
 "use strict";
 
